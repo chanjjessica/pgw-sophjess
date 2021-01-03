@@ -1,0 +1,13 @@
+Using the following dependencies:
+
+mocha: for testing --> see https://mochajs.org/ for setup instructions
+    node install mocha
+
+To run tests using ES6 import/export syntax, run:
+    mocha -r esm
+
+chai: for additional testing functions beyond the basic assert library --> see https://www.chaijs.com/ for docs
+    node install chai
+
+underscore: for deep object comparison --> see https://underscorejs.org/ for docs
+    node install underscore

@@ -1,0 +1,285 @@
+<style>
+    html {
+        height: 100%;
+    }
+    body {
+        background-image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url('https://i.ibb.co/MMqwDQZ/5playing-mahjong.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        height: 100%;
+    }
+    .btn-game {
+        width: 198px;
+        height: 50px;
+        border-radius: 20px 0px 0px 10px;
+        font-weight: bold;
+        background-color: white;
+    }
+    .btn-tournament {
+        width: 197px;
+        height: 50px;
+        border-radius: 0px 20px 10px 0px;
+        font-weight: bold;
+        background-color: grey;
+    }
+    .white-box {
+        background-color: white;
+        width: 400px;
+        height: 345px;
+        margin-left: auto;
+        margin-right: auto;
+        border-radius: 20px;
+        text-align: center;
+    }
+    .top-bar {
+        color: white;
+    }
+    .logo {
+        height: 200px;
+        position: absolute;
+        top: 0px;
+        left: 20px;
+    }
+    .mt-4 {
+        text-align: center;
+        font-size: 30px;
+    }
+    .links {
+        position: absolute;
+        top: 60px;
+        right: 50px;
+        font-size: 18px;
+    }
+    a {
+        color: white;
+    }
+    input {
+        width: 275px;
+        height: 50px;
+        padding: 10px;
+        border-radius: 10px;
+        font-size: 18px;
+        margin-bottom: 15px;
+    }
+    .btn-join {
+        border-radius: 10px;
+        height: 50px;
+        width: 130px;
+        font-size: 20px;
+        margin-right: 12px;
+        margin-bottom: 15px;
+        background-color: #0076be;
+        color: white;
+        font-weight: bold;
+    }
+    .btn-view {
+        border-radius: 10px;
+        height: 50px;
+        width: 130px;
+        font-size: 20px;
+        margin-bottom: 15px;
+        background-color: white;
+        color: black;
+        font-weight: bold;
+    }
+    .btn-host {
+        height: 50px;
+        width: 275px;
+        font-size: 20px;
+        border-radius: 10px;
+        margin-bottom: 15px;
+        background-color: #0ead70;
+        color: white;
+        font-weight: bold;
+    }
+    .btn-open {
+        height: 50px;
+        width: 275px;
+        font-size: 20px;
+        border-radius: 10px;
+        background-color: white;
+        color: black;
+        font-weight: bold;
+    }
+    .btn-room {
+        height: 50px;
+        width: 275px;
+        font-size: 12px;
+        border-radius: 10px;
+        background-color: #0076be;
+        color: white;
+    }
+    .message-box {
+        position: absolute;
+        bottom: 10px;
+        right: 10px;
+        background-color: white;
+        color: darkred;
+        width: 250px;
+        border-radius: 10px;
+    }
+    .links-box {
+        position: absolute;
+        bottom: 10px;
+        left: 10px;
+        background-color: white;
+        color: black;
+        width: 250px;
+        border-radius: 10px;
+    }
+    .url {
+        color: blue
+    }
+    .discord-box {
+        position: absolute;
+        bottom: 100px;
+        left: 10px;
+        background-color: white;
+        color: black;
+        width: 250px;
+        border-radius: 10px;
+    }
+</style>
+
+<div class="top-bar">
+    <img class="logo" src="https://i.ibb.co/jgh8GcF/2-logo.png" alt="Brown Mahjong Logo" border="0"/><br/>
+    <div class="mt-4">Welcome <%= user.name %></div>
+    <div class="links"><a href="/about">About Us</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/users/reset">Reset Password</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/users/logout">Logout</a></div>
+</div>
+
+<br/><br/><br/>
+​
+<div class="white-box">
+    <!--Commented hyperlinked image is for a different join room button in case that version is preferred-->
+    <!--<a href="https://play.brownmahjong.com/"><img src="https://i.ibb.co/d68M0Lw/Join-Room-Button.png" alt="Join-Room-Button" border="0"/></a><br/><br/>-->
+    <!--<a href="https://play.brownmahjong.com"><img class="button" src="https://i.ibb.co/BwWkqNQ/Join-Room-Button-Alt.png" alt="Alternate-Join-Room-Button" border="0"/></a><br/><br/>-->
+    <button class="btn-game" id="btn-game" onclick="changeColor('btn-game')">GAME</button>
+    <button class="btn-tournament" id="btn-tournament" onclick="changeColor('btn-tournament')">TOURNAMENT</button><br/><br/>
+    <input class="input-code" id="room-to-join" type="text" placeholder="Enter the Game Code"></input><br/>
+    <button class="btn-join" onclick="validateRoom(document.getElementById('room-to-join').value)">JOIN</button>
+    <button class="btn-view">VIEW</button><br/>
+    <button class="btn-host" onclick="createRoom()">HOST A GAME</button><br/>
+
+    <button class="btn-open" id="show-rooms" onclick="showList()">SHOW OPEN GAMES</button>
+    <br>
+    <br>
+    <br>
+    <div class="col-lg-12" id="room-list">
+
+    </div>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
+    <script >
+        socket = io();
+        function createRoom(){
+
+            var form = document.createElement('form');
+            form.setAttribute('method', 'get');
+
+            socket.emit('createRoom','test',(data)=>{
+
+                console.log(socket.id.toString() + ' created a room ' + data.toString())
+                form.setAttribute('action', '/game_'+data.toString());
+                form.style.display = 'hidden';
+                document.body.appendChild(form)
+                form.submit();
+            });
+        }
+
+        function validateRoom(rid) {
+            socket.emit('validateRoom', rid);
+        }
+
+        function joinRoom(rid){
+
+            socket.emit('joinRoom',rid,(data)=>{
+                var form = document.createElement('form');
+                form.setAttribute('method', 'get');
+                form.setAttribute('action', '/game_'+data.toString());
+                form.style.display = 'hidden';
+                document.body.appendChild(form)
+                form.submit();
+                //console.log('join a room '+data);
+            });
+            //socket.emit('ready')
+
+        }
+
+        function showList() {
+            const listButton = $('#show-rooms');
+            const roomList = $('#room-list');
+            if (listButton.text() === 'SHOW OPEN GAMES') {
+                // show games
+                listButton.html('HIDE OPEN GAMES');
+                socket.emit('getOpenRooms');
+            } else if (listButton.text() === 'HIDE OPEN GAMES') {
+                // clear list
+                roomList.empty();
+                listButton.html('SHOW OPEN GAMES');
+            }
+        }
+
+        function roomButtonFunc(elem) {
+            validateRoom(elem.name);
+        }
+
+        function updateRoomList(data) {
+            const listButton = $('#show-rooms');
+            const roomList = $('#room-list');
+            if (listButton.text() === 'HIDE OPEN GAMES') {
+                roomList.empty();
+                for (let i = 0; i < data.length; i++) {
+                    const idString = data[i].id.toString();
+                    const players = data[i].numPlayers.toString();
+                    roomList.append('<button class="btn-room" onclick="roomButtonFunc(this)" name="'+idString +'">' + idString + '<br>Players: ' + players + '</button>');
+                }
+            }
+        }
+        function changeColor(btn){
+            var property_game = document.getElementById("btn-game");
+            var property_tournment = document.getElementById("btn-tournament");
+            if(btn=="btn-game"){
+                property_game.style.backgroundColor = "white";
+                property_tournment.style.backgroundColor = "grey";
+            }
+            else{
+                property_game.style.backgroundColor = "grey";
+                property_tournment.style.backgroundColor = "white";
+            }
+        }
+
+        socket.on('allowJoin', (rid) => {
+            joinRoom(rid);
+        })
+
+        socket.on('roomFull', () => {
+            alert('Sorry, this room is full.');
+        })
+
+        socket.on('roomNotExists', () => {
+            alert('This room does not exist. Please re-enter a valid gamecode or host a new game.')
+        })
+
+        socket.on('updateRoomList', (data) => {
+            updateRoomList(data);
+        })
+
+    </script>
+</div>
+
+<div class="discord-box">
+    Looking for people to play with? Join our <a class="url" href="https://discord.gg/4hfb3Cr" target="_blank">discord server</a>!
+</div>
+
+<div class="links-box">
+    Found a <a class="url" href="https://mahjongga.me/bug" target="_blank">bug</a>? Have a <a class="url" href="https://mahjongga.me/suggestion" target="_blank">suggestion</a>? Please let us know!
+</div>
+
+<div class="message-box">
+    Please note: our tournament system and spectate feature are still in development.
+</div>

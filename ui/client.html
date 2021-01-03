@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>playMahjong Gameroom</title>
+    <link rel="stylesheet" href="bootstrap.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body id="content">
+    <ul id="messages"></ul>
+
+    <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
+    <div id="game_panel_container">Loading Gameroom...</div>
+
+    <!--
+    <button id="join" onclick="joinRoom()">join</button>
+    -->
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+
+    
+    <!-- Must install node modules, run jsx preprocessor => 
+        npx babel --watch ui --out-dir . --presets react-app/prod
+        Note: Leave it running
+    -->
+    <script type='text/babel' src='gameroom.js'>
+
+    </script>
+
+
+    <!-- Alternative method => precompile jsx code (file not most recent) -->
+    <!--<script type='module' src="/gameroom_compiled.js"></script> -->
+
+
+
+
+
+
+
+</body>
+</html>

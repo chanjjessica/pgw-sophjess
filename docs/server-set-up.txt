@@ -1,0 +1,9 @@
+To start the server:
+Navigate to your project directory and run
+
+`node ./src/server`
+
+Then in a browser, navigate to http://localhost:4567
+Right click and select 'inspect element' to view the server-client interaction on pressing the button.
+
+Connections are handled using the socket.io library: https://socket.io/

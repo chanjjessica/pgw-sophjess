@@ -1,0 +1,17 @@
+runtime: nodejs12
+env: standard
+
+handlers:
+  - url: /.*
+    secure: always
+    redirect_http_response_code: 301
+    script: auto
+resources:
+  cpu: 16
+  memory_gb: 24
+  disk_size_gb: 40
+automatic_scaling:
+  max_instances: 1
+
+network:
+  session_affinity: true

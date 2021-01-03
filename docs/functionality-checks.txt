@@ -1,0 +1,19 @@
+Before opening a pull request, make sure the following commands still run without errors:
+
+mocha -r esm
+
+==> This runs our test suite. If any tests fail, whereas they were working before, you should continue testing
+and debugging to make sure the test case was written correctly and/or your code is working correctly. Otherwise,
+remaining failed tests MUST be documented in the pull request specifying WHAT the issue is and WHY it hasn't been
+fixed yet.
+
+node ./src/server
+
+==> Currently, this is the script that starts our test server. It should remain set up so that we can debug quickly.
+The functionality of this command realistically shouldn't change unless you edit the server.js file directly, but
+just try to quickly ensure that your console prints an error-free response: 'listening on port:4567'. Again, if
+any changes which aren't resolved confound this command, document WHAT the problem is and WHY it couldn't be fixed.
+
+Please follow the above checks when making a pull request. It is critical that the master branch remains functional
+so that we can all build off of it or jump backwards to a working version if necessary. In exceptional cases, you
+may open a pull request without the above commands working, but please follow the instructions above in each case.

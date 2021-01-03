@@ -1,0 +1,41 @@
+<style>
+  body {
+    background-image: url('https://i.ibb.co/TWKyPc1/50-opacity.png');
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+      height: 100%;
+  }
+
+  img {
+    width: 300px;
+    height: 200px;
+  }
+
+  </style>
+
+<body>
+<div class="row mt-5">
+  
+  <div class="col-md-6 m-auto">
+    <div class="logo">
+    <div class="card card-body text-center">
+     <h1><img src="https://i.ibb.co/9cJ45rS/brown-logo.png" ></h1>
+    
+      <p>Create an account or login</p>
+<!--      <a href="/users/register" class="btn btn-primary btn-block mb-2">Register</a>-->
+<!--        <button id="register" class="btn btn-primary btn-block mb-2" onclick="disableMessage()">Registration closed</button>-->
+<!--      <a href="/users/login" class="btn btn-secondary btn-block">Login</a>-->
+        <a href="/users/login" class="btn btn-primary btn-block mb-2">Login</a>
+        <button id="register" class="btn btn-secondary btn-block" onclick="disableMessage()">Registration closed</button>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+<script>
+    function disableMessage() {
+        $('#register').html('Registration is disabled for beta. Please login with your existing credentials.')
+    }
+</script>
+</body>
