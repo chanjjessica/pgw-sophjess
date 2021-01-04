@@ -84,7 +84,7 @@ class Login extends Component {
                   </svg>
                 </div>
               </div>
-              <form onSubmit={this.handleSubmit}>
+              <form onSubmit={this.onSubmit}>
               <div 
                 data-layer="b4969a6b-4413-424e-8b77-769c7d92d127"
                 className="rectangle1"
@@ -99,7 +99,7 @@ class Login extends Component {
                 Log In
               </div>
               <Link
-              to="/Register"
+              to="/register"
                 data-layer="44ccc677-8950-40e4-a089-47f5c15c593b"
                 className="notRegisteredCreateAnAccount"
               >
@@ -165,7 +165,7 @@ class Login extends Component {
                 className="rectangle8"
               ></div>
               <Link
-                to="/Register"
+                to="/register"
                 data-layer="2e91f537-e99a-4d02-98c1-b2650e7b667b"
                 className="btn rectangle9"
               ></Link>

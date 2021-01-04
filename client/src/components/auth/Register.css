@@ -108,7 +108,7 @@
     -ms-transform-origin: center;
     -webkit-transform-origin: center;
     transform-origin: center;
-      /* background-image: url("assets/x1600349322906.png"); */
+      background-image: url("../assets/1600349322906.jpg");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -504,6 +504,7 @@
 
 }
 
+/* facebook icon */
 .web19202 .x124010 {
     position: absolute;
       box-sizing: content-box;
