@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Link, Redirect } from "react-router-dom";
 import axios from "axios";
 import "./Login.css";
+import GoogleBtn from './GoogleBtn';
 
 class Login extends Component {
     constructor() {
@@ -174,7 +175,7 @@ class Login extends Component {
               <div
                 data-layer="4a87b93d-5bfc-4b81-8168-85b8ff4e11c3"
                 className="x124010"
-              ></div>
+              ><GoogleBtn/></div>
               <div
                 data-layer="3423aedf-c670-4140-be19-f90724067c14"
                 className="googleLogin0"

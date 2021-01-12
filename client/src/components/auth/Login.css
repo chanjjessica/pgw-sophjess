@@ -697,6 +697,7 @@
 
 }
 
+/* new google login button */
 .web19201 .x124010 {
     position: absolute;
       box-sizing: content-box;
@@ -706,7 +707,7 @@
     -ms-transform-origin: center;
     -webkit-transform-origin: center;
     transform-origin: center;
-      /* background-image: url("assets/x124010.png"); */
+      /* background-image: url("../assets/googleLogin0.png"); */
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;

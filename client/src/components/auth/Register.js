@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import "./Register.css";
+import GoogleBtn from "./GoogleBtn";
 
 class Register extends Component {
   constructor() {
@@ -147,7 +148,7 @@ class Register extends Component {
             <div
               data-layer="feacb39a-0dcb-4e97-a2b3-b9f822e524f0"
               className="x124010"
-            ></div>
+            ><GoogleBtn/></div>
             <div
               data-layer="9d4c59d7-247d-4bc8-b565-2bedb8bc685c"
               className="googleLogin0"
