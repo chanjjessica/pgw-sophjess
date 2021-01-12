@@ -7,9 +7,35 @@ const User = require('../models/User');
 const { ensureAuthenticated, forwardAuthenticated } = require('../config/auth');
 
 // Login Page
-router.get('/login', forwardAuthenticated, (req, res) => res.render('login'));
+// router.get('/login', forwardAuthenticated, (req, res) => res.render('login'));
 
 // Register Page
+
+router.post('/register', (req, res) => {
+  console.log('user signup');
+
+  const { email, password } = req.body
+  // ADD VALIDATION
+  User.findOne({ email: email }, (err, user) => {
+      if (err) {
+          console.log('Users.js post error: ', err)
+      } else if (user) {
+          res.json({
+              error: `Sorry, already a user with the email: ${email}`
+          })
+      }
+      else {
+          const newUser = new User({
+              email: email,
+              password: password
+          })
+          newUser.save((err, savedUser) => {
+              if (err) return res.json(err)
+              res.json(savedUser)
+          })
+      }
+  })
+})
 // router.get('/register', forwardAuthenticated, (req, res) => res.render('register'));
 
 // Register
@@ -77,13 +103,34 @@ router.get('/login', forwardAuthenticated, (req, res) => res.render('login'));
 // });
 
 // Login
-router.post('/login', (req, res, next) => {
-  passport.authenticate('local', {
-    successRedirect: '/dashboard',
-    failureRedirect: '/users/login',
-    failureFlash: true
-  })(req, res, next);
-});
+// router.post('/login', (req, res, next) => {
+//   passport.authenticate('local', {
+//     successRedirect: '/dashboard',
+//     failureRedirect: '/users/login',
+//     failureFlash: true
+//   })(req, res, next);
+//   // var userInfo = {
+//   //   email: req.user.email
+//   // };
+//   // res.send(userInfo);
+// });
+
+router.post(
+  '/login',
+  function (req, res, next) {
+      console.log('routes/user.js, login, req.body: ');
+      console.log(req.body)
+      next()
+  },
+  passport.authenticate('local'),
+  (req, res) => {
+      console.log('logged in', req.user);
+      var userInfo = {
+          username: req.user.username
+      };
+      res.send(userInfo);
+  }
+)
 
 // Logout
 router.get('/logout', (req, res) => {

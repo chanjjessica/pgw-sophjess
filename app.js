@@ -13,6 +13,7 @@ const io = require('socket.io').listen(server);
 const { v4: uuidv4 } = require('uuid');
 const sharedsession = require("express-socket.io-session");
 const favicon = require('serve-favicon');
+const bodyParser = require("body-parser");
 
 // Passport Config
 require('./config/passport')(passport);
@@ -34,7 +35,13 @@ app.use(expressLayouts);
 app.set('view engine', 'ejs');
 
 // Express body parser
-app.use(express.urlencoded({ extended: true }));
+// app.use(express.urlencoded({ extended: true })); // took out temporarily
+app.use(
+    bodyParser.urlencoded({
+      extended: true
+    })
+  );
+  app.use(bodyParser.json());
 
 // Express session
 var sessionMiddleware = session({

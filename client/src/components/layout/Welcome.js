@@ -11,7 +11,7 @@ class Welcome extends Component {
         <meta charset="utf-8"/>
         <title>Web 1920 – 11</title>
         
-        <link rel="stylesheet" href="web192011.css"/>
+        {/* <link rel="stylesheet" href="web192011.css"/> */}
     </head> 
 ​
     <body>

@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
+import { Link, Redirect } from "react-router-dom";
+import axios from "axios";
 import "./Login.css";
 
 class Login extends Component {
@@ -9,8 +10,11 @@ class Login extends Component {
             email: "",
             password: "",
             remember:false,
-            errors: {}
+            errors: {},
+            redirectTo: null
         };
+        this.onChange = this.onChange.bind(this);
+        this.onSubmit = this.onSubmit.bind(this);
 
     }
 
@@ -30,16 +34,43 @@ class Login extends Component {
     onSubmit = e => {
         e.preventDefault();
 
-        const userData = {
+        // const userData = {
+        //     email: this.state.email,
+        //     password: this.state.password
+        // };
+
+        // console.log(userData);
+        axios
+        .post('/users/login', {
             email: this.state.email,
             password: this.state.password
-        };
-
-        console.log(userData);
+        })
+        .then(response => {
+            console.log('login response: ')
+            console.log(response)
+            if (response.status === 200) {
+                // update App.js state
+                this.props.updateUser({
+                    loggedIn: true,
+                    email: response.data.email
+                })
+                // update the state to redirect to home or the dashboard
+                this.setState({
+                    redirectTo: '/dashboard'
+                })
+            }
+        }).catch(error => {
+            console.log('login error: ')
+            console.log(error);
+            
+        })
     };
 
     render() {
         const { errors } = this.state;
+        if (this.state.redirectTo) {
+          return <Redirect to={{ pathname: this.state.redirectTo }} />
+      }else{
 
         return (
 <div>
@@ -47,7 +78,7 @@ class Login extends Component {
             <meta charset="utf-8" />
             <title>Web 1920 – 1</title>
         
-            <link rel="stylesheet" href="web19201.css" />
+            {/* <link rel="stylesheet" href="web19201.css" /> */}
           </head>
           ​
           <body>
@@ -276,6 +307,7 @@ class Login extends Component {
 
         )
     }
+  }
 }
 
 export default Login;

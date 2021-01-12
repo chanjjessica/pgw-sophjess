@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
+import axios from "axios";
 import "./Register.css";
 
 class Register extends Component {
@@ -23,13 +24,36 @@ class Register extends Component {
 
   onSubmit = (e) => {
     e.preventDefault();
-    const newUser = {
+    // const newUser = {
+    //   email: this.state.email,
+    //   password: this.state.password,
+    //   password2: this.state.password2,
+    //   agree: this.state.agree
+    // };
+    // console.log(newUser);
+    console.log("Sign-up-form, email: ");
+    console.log(this.state.email);
+    axios.post("/users/", {
       email: this.state.email,
-      password: this.state.password,
-      password2: this.state.password2,
-      agree: this.state.agree
-    };
-    console.log(newUser);
+      password: this.state.password
+    })
+    .then(response => {
+      console.log(response)
+      if (response.data) {
+        console.log("Successful signup");
+        this.setState({
+          redirectTo: "/login"
+        })
+      }
+      else {
+        console.log("Sign-up error");
+      }
+
+    })
+    .catch(error => {
+      console.log("Sign up server error: ");
+      console.log(error);
+    })
   };
 
   render() {
@@ -41,7 +65,7 @@ class Register extends Component {
           <meta charset="utf-8" />
           <title>Web 1920 – 2</title>
 
-          <link rel="stylesheet" href="web19202.css" />
+          {/* <link rel="stylesheet" href="web19202.css" /> */}
         </head>
         ​
         <body>
