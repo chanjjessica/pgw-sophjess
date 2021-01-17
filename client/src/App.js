@@ -8,6 +8,10 @@ import './App.css';
 import Welcome from "./components/layout/Welcome";
 import Register from "./components/auth/Register";
 import Login from "./components/auth/Login";
+import Dashboard from "./components/layout/Dashboard";
+import Host from "./components/game/Host";
+import Join from "./components/game/Join";
+import FoundBug from "./components/layout/FoundBug";
 
 class App extends Component {
   constructor() {
@@ -63,6 +67,9 @@ class App extends Component {
             <Route exact path="/" component={Welcome} />
             <Route exact path="/register" component={Register} />
             <Route exact path="/login" render={() => <Login updateUser={this.updateUser}/>} />
+            <Route exact path="/dashboard" component={Dashboard} />
+            <Route exact path="/host" component={Host} />
+            <Route exact path="/join" component={Join} />
           </div>
         </Router>
 
