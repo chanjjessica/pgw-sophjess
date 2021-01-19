@@ -10,7 +10,7 @@ const http =require('http');
 const { isObject } = require('underscore');
 const server = http.createServer(app);
 const io = require('socket.io').listen(server);
-const { v4: uuidv4 } = require('uuid');
+//const { v4: uuidv4 } = require('uuid');
 const sharedsession = require("express-socket.io-session");
 const favicon = require('serve-favicon');
 const bodyParser = require("body-parser");
@@ -573,6 +573,20 @@ function endByExhaustion(roomId) {
     io.to(roomId).emit('hu', endPayload);
 }
 
+ /**
+  * Creates a short room ID code.
+  * @param {*} length   the desired length of the code
+  */
+function generateRoomID(length) {
+    var result = '';
+    var characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ123456789';
+    var charactersLength = characters.length;
+    for ( var i = 0; i < length; i++ ) {
+       result += characters.charAt(Math.floor(Math.random() * charactersLength));
+    }
+    return result;
+ }
+
 //----------------------- Event Listeners -----------------------------
 
 io.on('connection', (socket) => {
@@ -593,7 +607,7 @@ io.on('connection', (socket) => {
 
     // Creates a new game room with game instance variables
     socket.on('createRoom', (roomName, callback) => {
-        var rid = uuidv4();
+        var rid = generateRoomID(6);
         const room = {
             id: rid, // generate a unique id for the new room, that way we don't need to deal with duplicates.
             players: [],
