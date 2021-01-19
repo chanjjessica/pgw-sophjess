@@ -1,8 +1,26 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import "./Host.css";
+import socketIOClient from "socket.io-client";
+const ENDPOINT = "http://localhost:5000/";
+
+let socket = socketIOClient(ENDPOINT);
 
 class Host extends Component {
+
+  createRoom() {
+    var form = document.createElement('form');
+    form.setAttribute('method', 'get');
+    console.log("hey");
+    socket.emit('createRoom','test',(data)=>{
+      console.log(socket.id.toString() + ' created a room ' + data.toString())
+      form.setAttribute('action', '/game_'+data.toString());
+      form.style.display = 'hidden';
+      document.body.appendChild(form)
+      form.submit();
+    });
+  }
+
   render() {
     return (
       <div>
@@ -188,6 +206,7 @@ class Host extends Component {
             <div
               data-layer="47634e86-d331-4975-ad51-533ca61a0b81"
               className="component7025"
+              onClick={this.createRoom}
             >
               {" "}
               <div

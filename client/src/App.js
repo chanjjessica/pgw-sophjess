@@ -12,6 +12,7 @@ import Dashboard from "./components/layout/Dashboard";
 import Host from "./components/game/Host";
 import Join from "./components/game/Join";
 import FoundBug from "./components/layout/FoundBug";
+//import HandView from "../../ui/gameroom"
 
 class App extends Component {
   constructor() {
@@ -38,7 +39,7 @@ class App extends Component {
     try{
     axios.get('/').then(response => {
       console.log('Get user response: ')
-      console.log(response.data)
+      //console.log(response.data)
       if (response.data.user) {
         console.log('Get User: There is a user saved in the server session: ')
 
