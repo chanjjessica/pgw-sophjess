@@ -7,7 +7,6 @@ const ENDPOINT = "http://localhost:5000/";
 let socket = socketIOClient(ENDPOINT);
 
 class Host extends Component {
-  
   createRoom() {
     var form = document.createElement('form');
     form.setAttribute('method', 'get');
@@ -30,24 +29,9 @@ class Host extends Component {
       this.onChange = this.onChange.bind(this);
     }
 
-    // onChangePublic = e => {
-    //   this.setState({ [e.target.id]: e.target.value });
-    //   this.setState({
-    //     public: e.target.checked
-    //   });
-    // };
-
-    // onChangePrivate = e => {
-    //   this.setState({ [e.target.id]: e.target.value });
-    //   this.setState({
-    //     private: e.target.checked
-    //   });
-    // };
-
     onChange = e => {
-      this.setState({ public: e.target.checked });
-      this.setState({ private: e.target.checked });
-      this.setState({ [e.target.id]: e.target.value });
+      this.setState({ public: document.getElementById("publicChecker").checked });
+      this.setState({ private: document.getElementById("privateChecker").checked });
     };
 
   render() {
@@ -204,6 +188,10 @@ class Host extends Component {
               data-layer="fb483ed1-b9b1-4c2b-b3ad-d4405d82a32a"
               className="component7035"
             >
+              <div
+                data-layer="cbe2642f-eb4d-4af4-bdda-57ba844f7abd"
+                className="rectangle1633"
+              ></div>
               {" "}
               <div
                 data-layer="1f66bf6a-4578-459c-bd5d-08756d56289a"
@@ -215,9 +203,10 @@ class Host extends Component {
                 type="checkbox"
                   data-layer="4d1a6843-da73-4f8d-b15c-5a506345615b"
                   className="rectangle1630"
-                  checked= {this.state.remember}
+                  checked= {this.state.private}
                   onChange={this.onChange}
                 />
+                <label htmlFor="privateChecker">Private</label>
                 <div
                   data-layer="dec630bf-60fb-4b2c-b532-af4d51940bce"
                   className="privateGame"
@@ -231,10 +220,6 @@ class Host extends Component {
                   host a game with your friends by sharing an access code
                 </div>
               </div>
-              <div
-                data-layer="cbe2642f-eb4d-4af4-bdda-57ba844f7abd"
-                className="rectangle1633"
-              ></div>
             </div>
             <div
               data-layer="47634e86-d331-4975-ad51-533ca61a0b81"
@@ -259,7 +244,7 @@ class Host extends Component {
                   checked= {this.state.public}
                   onChange={this.onChange}
                 />
-                <label htmlFor="publicChecker">f</label>
+                <label htmlFor="publicChecker">Public</label>
                 <div
                   data-layer="99fe10e8-1b78-484d-b316-92df1ce2aeb8"
                   className="publicGame"
