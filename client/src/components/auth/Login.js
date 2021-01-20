@@ -169,7 +169,7 @@ class Login extends Component {
 											checked={this.state.remember}
 											onChange={this.onChange}
 										/>
-										<label htmlFor="checker">asd</label>
+										<label htmlFor="checker"> </label>
 									</div>
 									<div
 										data-layer="98a4c3fe-b5e4-4600-9703-a0306a2839b1"
