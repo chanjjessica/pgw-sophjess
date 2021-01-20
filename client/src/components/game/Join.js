@@ -4,14 +4,18 @@ import { Link } from "react-router-dom";
 import "./Join.css";
 
 class Join extends Component {
-//   constructor() {
-//       super();
-//       this.state = {
-//           code: "",
-//           redirectTo:null
-//       };
-//       this.onSubmit = this.onSubmit.bind(this);
-//   }
+  constructor() {
+      super();
+      this.state = {
+          code: "",
+          redirectTo:null
+      };
+      this.onSubmit = this.onSubmit.bind(this);
+  }
+
+  onSubmit = e => {
+    this.setState({ code: e.target.value });
+  }
 
   render() {
     return (
@@ -116,7 +120,7 @@ class Join extends Component {
             <input
               data-layer="240aee8f-e89a-4450-a170-d474dd601493"
               className="rectangle1620"
-              fontSize="100px"
+              onChange={this.onChange}
             />
             <div
               data-layer="4523d49f-b924-479a-9eb6-4353436c7be4"

@@ -628,9 +628,9 @@
       margin-bottom: 0.00px;
       margin-left: 0.00px;
       padding-top: 0.00px;
-      padding-right: 0.00px;
+      padding-right: 25.00px;
       padding-bottom: 0.00px;
-      padding-left: 0.00px;
+      padding-left: 25.00px;
       background-color: rgba(242, 240, 240, 1);
       border-bottom-color: rgba(112, 112, 112, 1);
       border-bottom-style: none;
@@ -649,11 +649,11 @@
       border-bottom-left-radius: 23.00px;
       border-bottom-right-radius: 23.00px;
       box-shadow: none;
-      width: 642.00px;
+      width: 592.00px;
     height: 112.00px;
     left: 639.00px;
     top: 490.00px;
-
+    font-size: 50px;
 }
 
 .web192020 .rectangle1622 {

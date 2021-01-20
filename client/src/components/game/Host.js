@@ -1,8 +1,55 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import "./Host.css";
+import socketIOClient from "socket.io-client";
+const ENDPOINT = "http://localhost:5000/";
+
+let socket = socketIOClient(ENDPOINT);
 
 class Host extends Component {
+  
+  createRoom() {
+    var form = document.createElement('form');
+    form.setAttribute('method', 'get');
+    console.log("hey");
+    socket.emit('createRoom','test',(data)=>{
+      console.log(socket.id.toString() + ' created a room ' + data.toString())
+      form.setAttribute('action', '/game_'+data.toString());
+      form.style.display = 'hidden';
+      document.body.appendChild(form)
+      form.submit();
+    });
+  }
+
+    constructor() {
+      super();
+      this.state = {
+        public:false,
+        private:false
+      };
+      this.onChange = this.onChange.bind(this);
+    }
+
+    // onChangePublic = e => {
+    //   this.setState({ [e.target.id]: e.target.value });
+    //   this.setState({
+    //     public: e.target.checked
+    //   });
+    // };
+
+    // onChangePrivate = e => {
+    //   this.setState({ [e.target.id]: e.target.value });
+    //   this.setState({
+    //     private: e.target.checked
+    //   });
+    // };
+
+    onChange = e => {
+      this.setState({ public: e.target.checked });
+      this.setState({ private: e.target.checked });
+      this.setState({ [e.target.id]: e.target.value });
+    };
+
   render() {
     return (
       <div>
@@ -163,10 +210,14 @@ class Host extends Component {
                 className="group1517"
               >
                 {" "}
-                <div
+                <input
+                id="privateChecker"
+                type="checkbox"
                   data-layer="4d1a6843-da73-4f8d-b15c-5a506345615b"
                   className="rectangle1630"
-                ></div>
+                  checked= {this.state.remember}
+                  onChange={this.onChange}
+                />
                 <div
                   data-layer="dec630bf-60fb-4b2c-b532-af4d51940bce"
                   className="privateGame"
@@ -188,17 +239,27 @@ class Host extends Component {
             <div
               data-layer="47634e86-d331-4975-ad51-533ca61a0b81"
               className="component7025"
+              onClick={this.createRoom}
             >
+              <div
+                data-layer="9874caa2-8e36-4c32-80fd-b8417b2307e3"
+                className="rectangle1632"
+              ></div>
               {" "}
               <div
                 data-layer="82753a23-0e26-4efa-a6c7-cc78d0290fc2"
                 className="group1516"
               >
                 {" "}
-                <div
+                <input
+                id="publicChecker"
+                type="checkbox"
                   data-layer="79586ecc-d556-48f7-9861-db85891812ce"
                   className="rectangle1629"
-                ></div>
+                  checked= {this.state.public}
+                  onChange={this.onChange}
+                />
+                <label htmlFor="publicChecker">f</label>
                 <div
                   data-layer="99fe10e8-1b78-484d-b316-92df1ce2aeb8"
                   className="publicGame"
@@ -212,10 +273,6 @@ class Host extends Component {
                   host a game that anyone can join in “Open Games”
                 </div>
               </div>
-              <div
-                data-layer="9874caa2-8e36-4c32-80fd-b8417b2307e3"
-                className="rectangle1632"
-              ></div>
             </div>
             <div
               data-layer="680ecd25-5ee4-49b0-9bb3-23eadca92181"
