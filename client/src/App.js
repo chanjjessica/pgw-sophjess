@@ -10,6 +10,7 @@ import Login from './components/auth/Login';
 import Dashboard from './components/layout/Dashboard';
 import Host from './components/game/Host';
 import Join from './components/game/Join';
+import GameRoom from './components/game/GameRoom';
 import FoundBug from './components/layout/FoundBug';
 import ForgotEmailPassword from './components/auth/ForgotEmailPassword';
 //import HandView from "../../ui/gameroom"
@@ -77,6 +78,7 @@ class App extends Component {
 					<Route exact path="/host" component={Host} />
 					<Route exact path="/join" component={Join} />
 					<Route exact path="/forgot" component={ForgotEmailPassword} />
+					<Route exact path="/gameroom" component={GameRoom} />
 				</div>
 			</Router>
 		);
