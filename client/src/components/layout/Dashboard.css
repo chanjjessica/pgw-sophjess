@@ -1,4 +1,5 @@
 
+
       html {
         height: 100%;
         width: 100%;
@@ -57,7 +58,7 @@
     -ms-transform-origin: center;
     -webkit-transform-origin: center;
     transform-origin: center;
-      background-image: url("../assets/homescreen4.jpg");
+      background-image: url("../assets/homescreen4.png");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -96,7 +97,7 @@
 
 }
 
-.gameDashboard1 .playGameworksLtdCopyright2020f3878356 {
+.gameDashboard1 .playGameworksLtdCopyright20204609f95b {
     position: absolute;
       box-sizing: content-box;
       -ms-transform: rotate(0.00deg);
@@ -155,7 +156,7 @@
       padding-right: 0.00px;
       padding-bottom: 0.00px;
       padding-left: 0.00px;
-      background-color: rgba(229, 149, 193, 1);
+      background-color: rgba(28, 115, 183, 1);
       border-bottom-color: rgba(112, 112, 112, 1);
       border-bottom-style: none;
       border-bottom-width: 1.00px;
@@ -180,7 +181,7 @@
 
 }
 
-.gameDashboard1 .group187a879843 {
+.gameDashboard1 .group18d44080b2 {
 
       display: block;
       position: absolute;
@@ -191,6 +192,10 @@
     -ms-transform-origin: center;
     -webkit-transform-origin: center;
     transform-origin: center;
+      background-image: url("../assets/group18d44080b2.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
       opacity: 1;
       cursor: default;
       margin-top: 0.00px;
@@ -211,7 +216,7 @@
 
 }
 
-.gameDashboard1 .group187a879843 .rectangle1635 {
+.gameDashboard1 .group18d44080b2 .rectangle1635 {
     position: absolute;
       box-sizing: border-box;
       -ms-transform: rotate(0.00deg);
@@ -230,7 +235,7 @@
       padding-right: 0.00px;
       padding-bottom: 0.00px;
       padding-left: 0.00px;
-      background-color: rgba(255, 160, 147, 1);
+      background-color: rgba(255, 205, 147, 1);
       border-bottom-color: rgba(112, 112, 112, 1);
       border-bottom-style: solid;
       border-bottom-width: 1.00px;
@@ -305,7 +310,7 @@
       padding-right: 0.00px;
       padding-bottom: 0.00px;
       padding-left: 0.00px;
-      background-color: rgba(51, 125, 105, 1);
+      background-color: rgba(28, 115, 183, 1);
       border-bottom-color: rgba(112, 112, 112, 1);
       border-bottom-style: none;
       border-bottom-width: 1.00px;
@@ -357,16 +362,16 @@
       font-size: 40.00px;
       font-weight: 400;
     font-style: normal;
-      font-family: 'Khmer Sangam MN', Arial;
+      font-family: 'Josefin Sans', Arial;
       text-decoration: none;
       box-shadow: none;
       overflow-x: unset;
       overflow-y: unset;
       white-space: pre;
-      width: 184.00px;
-    height: 53.00px;
+      width: 189.00px;
+    height: 40.00px;
     left: 92.00px;
-    top: 13.00px;
+    top: 26.00px;
 
 }
 
@@ -420,7 +425,7 @@
       padding-right: 0.00px;
       padding-bottom: 0.00px;
       padding-left: 0.00px;
-      background-color: rgba(223, 21, 96, 1);
+      background-color: rgba(244, 26, 28, 1);
       border-bottom-color: rgba(112, 112, 112, 1);
       border-bottom-style: none;
       border-bottom-width: 1.00px;
@@ -472,16 +477,16 @@
       font-size: 40.00px;
       font-weight: 400;
     font-style: normal;
-      font-family: 'Khmer Sangam MN', Arial;
+      font-family: 'Josefin Sans', Arial;
       text-decoration: none;
       box-shadow: none;
       overflow-x: unset;
       overflow-y: unset;
       white-space: pre;
-      width: 228.00px;
-    height: 53.00px;
+      width: 237.00px;
+    height: 40.00px;
     left: 70.00px;
-    top: 13.00px;
+    top: 26.00px;
 
 }
 
@@ -535,7 +540,7 @@
       padding-right: 0.00px;
       padding-bottom: 0.00px;
       padding-left: 0.00px;
-      background-color: rgba(50, 56, 103, 1);
+      background-color: rgba(65, 64, 69, 1);
       border-bottom-color: rgba(112, 112, 112, 1);
       border-bottom-style: none;
       border-bottom-width: 1.00px;
@@ -587,16 +592,16 @@
       font-size: 40.00px;
       font-weight: 400;
     font-style: normal;
-      font-family: 'Khmer Sangam MN', Arial;
+      font-family: 'Josefin Sans', Arial;
       text-decoration: none;
       box-shadow: none;
       overflow-x: unset;
       overflow-y: unset;
       white-space: pre;
-      width: 228.00px;
-    height: 53.00px;
+      width: 240.00px;
+    height: 40.00px;
     left: 70.00px;
-    top: 13.00px;
+    top: 26.00px;
 
 }
 
@@ -681,7 +686,7 @@
       padding-right: 0.00px;
       padding-bottom: 0.00px;
       padding-left: 0.00px;
-      fill: rgba(255, 255, 255, 1);
+      fill: rgba(254, 255, 255, 1);
       box-shadow: none;
       width: 26.94px;
     height: 23.94px;
@@ -709,7 +714,7 @@
       padding-right: 0.00px;
       padding-bottom: 0.00px;
       padding-left: 0.00px;
-      fill: rgba(255, 255, 255, 1);
+      fill: rgba(254, 255, 255, 1);
       box-shadow: none;
       width: 37.70px;
     height: 17.66px;
@@ -777,7 +782,7 @@
 
 }
 
-.gameDashboard1 .component471 .userpfp {
+.gameDashboard1 .component471 .x0c3b3adb1a7530892e55ef36d3be6cb8 {
     position: absolute;
       box-sizing: content-box;
       -ms-transform: rotate(0.00deg);
@@ -786,7 +791,7 @@
     -ms-transform-origin: center;
     -webkit-transform-origin: center;
     transform-origin: center;
-      background-image: url("./../assets/userpfp.png");
+      background-image: url("../assets/x0c3b3adb1a7530892e55ef36d3be6cb8.png");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -825,54 +830,6 @@
 
 }
 
-.gameDashboard1 .playmahjongLogoCopy {
-    position: absolute;
-      box-sizing: content-box;
-      -ms-transform: rotate(0.00deg);
-    -webkit-transform: rotate(0.00deg);
-    transform: rotate(0.00deg);
-    -ms-transform-origin: center;
-    -webkit-transform-origin: center;
-    transform-origin: center;
-      background-image: url("./../assets/playmahjongLogoCopy.png");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-      opacity: 1;
-      cursor: default;
-      margin-top: 0.00px;
-      margin-right: 0.00px;
-      margin-bottom: 0.00px;
-      margin-left: 0.00px;
-      padding-top: 0.00px;
-      padding-right: 0.00px;
-      padding-bottom: 0.00px;
-      padding-left: 0.00px;
-      background-color: rgba(255, 255, 255, 0);
-      border-bottom-color: rgba(112, 112, 112, 1);
-      border-bottom-style: none;
-      border-bottom-width: 1.00px;
-      border-left-color: rgba(112, 112, 112, 1);
-      border-left-style: none;
-      border-left-width: 1.00px;
-      border-right-color: rgba(112, 112, 112, 1);
-      border-right-style: none;
-      border-right-width: 1.00px;
-      border-top-color: rgba(112, 112, 112, 1);
-      border-top-style: none;
-      border-top-width: 1.00px;
-      border-top-left-radius: 0.00px;
-      border-top-right-radius: 0.00px;
-      border-bottom-left-radius: 0.00px;
-      border-bottom-right-radius: 0.00px;
-      box-shadow: none;
-      width: 992.00px;
-    height: 558.00px;
-    left: 464.00px;
-    top: 145.00px;
-
-}
-
 .gameDashboard1 .group18 {
 
       display: block;
@@ -897,10 +854,10 @@
       overflow-x: unset;
       overflow-y: unset;
       background-color: transparent;
-      width: 331.00px;
-    height: 22.00px;
+      width: 338.00px;
+    height: 20.00px;
     left: 793.00px;
-    top: 1099.00px;
+    top: 1102.00px;
 
 }
 
@@ -931,14 +888,14 @@
       font-size: 20.00px;
       font-weight: 400;
     font-style: normal;
-      font-family: 'Helvetica Neue', Arial;
+      font-family: 'Josefin Sans', Arial;
       text-decoration: none;
       box-shadow: none;
       overflow-x: unset;
       overflow-y: unset;
       white-space: pre;
-      width: 331.00px;
-    height: 22.00px;
+      width: 338.00px;
+    height: 20.00px;
     left: 0.00px;
     top: 0.00px;
 
@@ -953,7 +910,7 @@
     -ms-transform-origin: center;
     -webkit-transform-origin: center;
     transform-origin: center;
-      background-image: url("../assets/img3253.png"); 
+      background-image: url("../assets/img3253.png");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -989,5 +946,53 @@
     height: 100.00px;
     left: 63.00px;
     top: 49.00px;
+
+}
+
+.gameDashboard1 .img3256 {
+    position: absolute;
+      box-sizing: content-box;
+      -ms-transform: rotate(0.00deg);
+    -webkit-transform: rotate(0.00deg);
+    transform: rotate(0.00deg);
+    -ms-transform-origin: center;
+    -webkit-transform-origin: center;
+    transform-origin: center;
+      background-image: url("../assets/img3256.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+      opacity: 1;
+      cursor: default;
+      margin-top: 0.00px;
+      margin-right: 0.00px;
+      margin-bottom: 0.00px;
+      margin-left: 0.00px;
+      padding-top: 0.00px;
+      padding-right: 0.00px;
+      padding-bottom: 0.00px;
+      padding-left: 0.00px;
+      background-color: rgba(255, 255, 255, 0);
+      border-bottom-color: rgba(112, 112, 112, 1);
+      border-bottom-style: none;
+      border-bottom-width: 1.00px;
+      border-left-color: rgba(112, 112, 112, 1);
+      border-left-style: none;
+      border-left-width: 1.00px;
+      border-right-color: rgba(112, 112, 112, 1);
+      border-right-style: none;
+      border-right-width: 1.00px;
+      border-top-color: rgba(112, 112, 112, 1);
+      border-top-style: none;
+      border-top-width: 1.00px;
+      border-top-left-radius: 0.00px;
+      border-top-right-radius: 0.00px;
+      border-bottom-left-radius: 0.00px;
+      border-bottom-right-radius: 0.00px;
+      box-shadow: none;
+      width: 988.00px;
+    height: 494.00px;
+    left: 466.00px;
+    top: 223.00px;
 
 }

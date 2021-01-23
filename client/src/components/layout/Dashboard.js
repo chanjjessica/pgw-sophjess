@@ -35,15 +35,10 @@ class Dashboard extends Component {
             ></div>
             <div
               data-layer="522aeb1c-9d22-44aa-8b46-4e561437c74f"
-              className="group187a879843"
-            >
-              {" "}
-              <div
-                data-layer="ca33903e-42d2-46db-9e3e-41c795ad0103"
-                className="rectangle1635"
-              ></div>
-            </div>
-            <Link to="/join"
+              class="group18d44080b2"
+            ></div>
+            <Link
+              to="/join"
               data-layer="7bebf3cb-ee06-4e80-96ab-08458139fe13"
               className="component523"
             >
@@ -75,7 +70,8 @@ class Dashboard extends Component {
                 Open Games
               </div>
             </div>
-            <Link to="/host"
+            <Link
+              to="/host"
               data-layer="238a0f47-3e58-4510-839f-bbc549240ba3"
               className="component511"
             >
@@ -137,25 +133,21 @@ class Dashboard extends Component {
                 className="x0c3b3adb1a7530892e55ef36d3be6cb8"
               ></div>
             </div>
-            <div
-              data-layer="a710bef8-bfd5-479d-b1f0-97e2f58f640b"
-              className="playmahjongLogoCopy"
-            ></div>
-            <div
-              data-layer="c3fddb88-70cd-444b-ac0d-8d246e2c2075"
-              className="group18"
-            >
-              {" "}
+            <div data-layer="c3fddb88-70cd-444b-ac0d-8d246e2c2075" class="group18">
               <div
                 data-layer="62943e4e-d2c0-4049-bec6-cb15bb02cb58"
-                className="playGameworksLtdCopyright2020"
+                class="playGameworksLtdCopyright2020"
               >
                 Play Gameworks Ltd. Copyright 2020
               </div>
             </div>
             <div
               data-layer="22672815-d899-4906-80a2-8fcda75a1717"
-              className="img3253"
+              class="img3253"
+            ></div>
+            <div
+              data-layer="2bbf4fab-a31c-4f99-a652-0b56f52cb3bf"
+              class="img3256"
             ></div>
           </div>
         </body>
