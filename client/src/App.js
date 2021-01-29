@@ -78,7 +78,7 @@ class App extends Component {
 					<Route exact path="/host" component={Host} />
 					<Route exact path="/join" component={Join} />
 					<Route exact path="/forgot" component={ForgotEmailPassword} />
-					<Route exact path="/gameroom" component={GameRoom} />
+					<Route exact path="/gameroom" component={Waiting} />
 				</div>
 			</Router>
 		);
